@@ -5,11 +5,13 @@ FROM python:3.8-slim
 WORKDIR /santhosh_docker_demo1
 
 # Copying necessory file into container
-COPY test.py . 
+COPY requirements.txt . 
 
 # Upgrade pip and install python depencies
 # RUN pip3 install --upgrade pip && pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-cache-dir
+RUN pip install --no-cache-dir -r requirements.txt || true
+
+COPY . .
 
 #Expose port 5000 for the application
 #EXPOSE 5000
@@ -17,4 +19,4 @@ RUN pip install --no-cache-dir
 #Define the command to run application using Ggunicorn
 # CMD ["gunicorn","application:app","-b",'0.0.0.0:5000", "-w", "4"]
 
-CMD ["python", "test.py"]
+CMD ["python", "app.py"]
