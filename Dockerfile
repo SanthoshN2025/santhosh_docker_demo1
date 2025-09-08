@@ -9,7 +9,7 @@ COPY test.py .
 
 # Upgrade pip and install python depencies
 # RUN pip3 install --upgrade pip && pip install --no-cache-dir -r requirements.txt
-RUN pip install --no-chache-dir
+RUN pip install --no-cache-dir
 
 #Expose port 5000 for the application
 #EXPOSE 5000
