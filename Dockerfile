@@ -2,7 +2,7 @@
 FROM python:3.8-slim
 
 # set working directlory within the container
-WORKDIR /santhosh_docker_demo
+WORKDIR /santhosh_docker_demo1
 
 # Copying necessory file into container
 COPY test.py . 
